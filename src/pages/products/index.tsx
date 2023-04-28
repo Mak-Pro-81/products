@@ -121,7 +121,7 @@ const ProductsPage = ({ categories, products }: IProps): JSX.Element => {
           setProductsList(data);
         });
     }
-  }, [currentPage, filteredProducts]);
+  }, [currentPage, filteredProducts, paginationPages]);
 
   return (
     <>
