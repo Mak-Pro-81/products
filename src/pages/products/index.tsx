@@ -33,7 +33,6 @@ interface IProps {
 }
 
 const ProductsPage = ({ categories, products }: IProps): JSX.Element => {
-  // initial products
   const [productsList, setProductsList] = useState<IProduct[]>(products);
   const [filteredProducts, setfilteredProducts] = useState<IProduct[]>([]);
   const [paginationPages, setPaginationPages] = useState<number>(
@@ -43,9 +42,6 @@ const ProductsPage = ({ categories, products }: IProps): JSX.Element => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [priceValues, setPriceValues] = useState<number[]>([0, 2000]);
   const [notFound, setNotFound] = useState<boolean>(false);
-  const debouncePriceValues = useDebounce<number[]>(priceValues, 500);
-
-  // FILTERS
 
   // category
   const handleChangeCategory = (event: SelectChangeEvent) => {
@@ -96,8 +92,6 @@ const ProductsPage = ({ categories, products }: IProps): JSX.Element => {
       setNotFound(true);
     }
   };
-
-  ////////////////////////////////////////////////////////////////////////////////////////////
 
   // pagination
   const handlePagination = (
